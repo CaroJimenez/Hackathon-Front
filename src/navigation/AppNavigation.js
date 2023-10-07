@@ -1,23 +1,22 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, useRoute } from "@react-navigation/native";
+import { View, Text } from 'react-native'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/Home/HomeScreen';
 
-
-
-const Stack =  createStackNavigator();
-
-export default class AppNavigation extends Component {
-  render() {
-    return (
-      <View>
-        <NavigationContainer>
+const Stack = createStackNavigator();
+export default function AppNavigation() {
+  return (
+    <View>
+      <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+        name="Home" 
+        component={HomeScreen}
+        />
         </Stack.Navigator>
-        </NavigationContainer>
-      </View>
-    )
-  }
+      </NavigationContainer>
+      <Text>AppNavigation</Text>
+    </View>
+  )
 }
